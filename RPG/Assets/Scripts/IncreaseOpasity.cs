@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class IncreaseOpasity : MonoBehaviour
 {
+    #region Variables
     private SpriteRenderer sprite;
     private Color color;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Functions
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
             color = sprite.color;
@@ -26,4 +24,5 @@ public class IncreaseOpasity : MonoBehaviour
                 Destroy(this);
             }
     }
+    #endregion
 }

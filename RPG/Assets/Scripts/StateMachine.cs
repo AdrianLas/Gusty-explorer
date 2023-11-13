@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
 {
+    #region Variables
     protected State state;
+    #endregion
 
+    #region Definitions
     public void _setState(State choosen_state)
     {
         state = choosen_state;
@@ -15,5 +16,5 @@ public abstract class StateMachine : MonoBehaviour
     {
         StartCoroutine(state.Run());
     }
-
+    #endregion
 }

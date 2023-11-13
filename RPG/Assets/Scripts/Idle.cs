@@ -1,16 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Idle : State
 {
-    // Start is called before the first frame update
+    #region Definitions
     public Idle(Engine engine) : base(engine)
     {
 
     }
-
-    // Update is called once per frame
 
     public override IEnumerator Start()
     {
@@ -27,5 +24,5 @@ public class Idle : State
         }
         yield break;
     }
-
+    #endregion
 }

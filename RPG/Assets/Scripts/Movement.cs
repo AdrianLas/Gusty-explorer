@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    #region Variables
     public GameObject Player;
     public Engine Engine;
     public static bool isAlive;
     public Animator animator;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Functions
     void Start()
     {
         isAlive = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.isPaused && isAlive)
@@ -44,11 +44,12 @@ public class Movement : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Definitions
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Engine.score += 1;
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -58,6 +59,6 @@ public class Movement : MonoBehaviour
     {
         Quaternion target = Quaternion.Euler(0, 0, angle);
         Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, target, Time.deltaTime * 5.0f);
-
     }
+    #endregion
 }

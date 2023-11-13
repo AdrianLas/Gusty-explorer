@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Barrier_movement : MonoBehaviour
 {
+    #region Variables
     public GameObject Barrier;
     private Rigidbody2D rb;
     private Engine engine;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Functions
     void Start()
     {
         engine = FindObjectOfType<Engine>();
@@ -15,12 +16,6 @@ public class Barrier_movement : MonoBehaviour
         Barrier.transform.position = new Vector3(Barrier.transform.position.x , Random.Range(25f,260f), Barrier.transform.position.z);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
     private void FixedUpdate()
     {
         var step = 200 * Time.deltaTime * (1 + 0.005f * engine.score);
@@ -32,5 +27,5 @@ public class Barrier_movement : MonoBehaviour
             }
         
     }
-
+    #endregion
 }

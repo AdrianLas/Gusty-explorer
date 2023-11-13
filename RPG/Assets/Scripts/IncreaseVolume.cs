@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class IncreaseVolume : MonoBehaviour
 {
+    #region Variables
     private AudioSource audioSource;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Functions
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (audioSource.volume < 1)
@@ -24,4 +23,5 @@ public class IncreaseVolume : MonoBehaviour
             Destroy(this);
         }
     }
+    #endregion
 }

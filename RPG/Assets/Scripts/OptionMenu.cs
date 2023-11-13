@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class OptionMenu : MonoBehaviour
 {
+    #region Variables
     public AudioMixer masterMixer;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Definitions
     public void SetMasterVolume(float volume)
     {
         masterMixer.SetFloat("masterVolume", volume);
@@ -19,4 +20,5 @@ public class OptionMenu : MonoBehaviour
     {
         masterMixer.SetFloat("soundsVolume", volume);
     }
+    #endregion
 }

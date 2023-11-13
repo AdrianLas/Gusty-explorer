@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EndGame : State
 {
+    #region Definitions
     public EndGame(Engine engine_source) : base(engine_source)
     {
     }
 
-    // Start is called before the first frame update
     public override IEnumerator Start()
     {
         Time.timeScale = 0;
@@ -19,4 +18,5 @@ public class EndGame : State
     {
         yield break;
     }
+    #endregion
 }

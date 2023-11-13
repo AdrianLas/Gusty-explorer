@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class OnSliderAwake : MonoBehaviour
 {
+    #region Variables
     public AudioMixer audioMixer;
     public Slider masterVolumeSlider;
     public Slider musicVolumeSlider;
     public Slider soundVolumeSlider;
+    #endregion
 
+    #region Functions
     void Start()
     {
         float masterVolume, musicVolume, soundsVolume;
@@ -20,9 +21,6 @@ public class OnSliderAwake : MonoBehaviour
         musicVolumeSlider.value = musicVolume;
         audioMixer.GetFloat("soundsVolume", out soundsVolume);
         soundVolumeSlider.value = soundsVolume;
-
     }
-
-    // Update is called once per frame
-
+    #endregion
 }

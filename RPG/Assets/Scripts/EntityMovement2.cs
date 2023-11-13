@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class EntityMovement2 : MonoBehaviour
 {
+    #region Variables
     public float movementSpeed;
+    #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
+    #region Functions
     void FixedUpdate()
     {
         Vector2 actualPosition = gameObject.transform.localPosition;
@@ -21,4 +18,5 @@ public class EntityMovement2 : MonoBehaviour
             gameObject.transform.localPosition = new Vector2(1810, actualPosition.y);
         }
     }
+    #endregion
 }

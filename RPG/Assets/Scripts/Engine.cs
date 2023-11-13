@@ -1,19 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Engine : StateMachine
 {
+    #region Variables
     public GameObject Barrier;
-    //[HideInInspector]
     public float score = 0;
     public bool started;
     public Vector3 playerVelocity = new Vector3(0, 0, 0);
     public GameObject[] enemies;
     private float timer;
     private float timeCounter;
-    // Start is called before the first frame update
+    #endregion
 
+    #region Functions
     void Start()
     {
         timeCounter = 0;
@@ -23,7 +22,6 @@ public class Engine : StateMachine
         InvokeRepeating("CreateEnemy", 0, 4);
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeCounter += Time.deltaTime;
@@ -34,6 +32,9 @@ public class Engine : StateMachine
         }
         Run();
     }
+    #endregion
+
+    #region Definitions
     void Create_Barrier()
     {
         Instantiate<GameObject>(Barrier);
@@ -56,5 +57,5 @@ public class Engine : StateMachine
             }
         }
     }
-
+    #endregion
 }

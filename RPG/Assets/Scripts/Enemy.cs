@@ -1,16 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region Variables
     private GameObject player;
     public GameObject prefab;
     public float power;
     public Animator animator;
     private bool trig;
     private float counter;
+    #endregion
+
+    #region Functions
     void Start()
     {
         trig = true;
@@ -18,7 +20,6 @@ public class Enemy : MonoBehaviour
         counter = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(gameObject.transform.position.y > 30 && trig == true)
@@ -43,6 +44,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
+
+    #region Definitions
     private void ShotOnPlayer()
     {
         animator.SetTrigger("attack");
@@ -63,4 +67,5 @@ public class Enemy : MonoBehaviour
     {
         gameObject.transform.position = new Vector2(gameObject.transform.position.x, direction * 150 * Time.deltaTime + gameObject.transform.position.y);
     }
+    #endregion
 }

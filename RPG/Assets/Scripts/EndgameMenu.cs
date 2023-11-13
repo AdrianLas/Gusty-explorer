@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
 public class EndgameMenu : MonoBehaviour
 {
+    #region Variables
     private bool endScreenOn;
-    // Start is called before the first frame update
     [SerializeField]
     private TMP_Text pointsCounter;
     public Engine engine;
@@ -17,14 +16,16 @@ public class EndgameMenu : MonoBehaviour
     [SerializeField]
     private GameObject gameOverlay;
     private AudioSource[] allAudioSources;
+    #endregion
 
+    #region Functions
     public void Start()
     {
         endScreenOn = true;
         endScreenMenu.SetActive(false);
         backgroundCover = endScreenMenu.GetComponent<Image>();
     }
-    // Update is called once per frame
+
     void Update()
     {
         if(!Movement.isAlive && endScreenOn)
@@ -32,6 +33,9 @@ public class EndgameMenu : MonoBehaviour
             StartCoroutine(Wait());
         }
     }
+    #endregion
+
+    #region Definitions
     IEnumerator Wait()
     {
         gameOverlay.SetActive(false);
@@ -46,4 +50,5 @@ public class EndgameMenu : MonoBehaviour
         pointsCounter.text = engine.score.ToString();
         endScreenOn = false;
     }
+    #endregion
 }

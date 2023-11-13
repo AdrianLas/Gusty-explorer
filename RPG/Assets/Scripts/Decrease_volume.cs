@@ -1,29 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Decrease_volume : MonoBehaviour
 {
+    #region Variables
     public int scoreTreshold;
     private AudioSource soundSource;
     private float volume;
     private Engine engine;
-    private Scene scene;
     public GameObject prefab;
     private int NewAreaReached;
     private GameObject holder;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Functions
     void Start()
     {
-
         soundSource = GetComponent<AudioSource>();
         engine = FindObjectOfType<Engine>();
         NewAreaReached = 0;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (engine.score >= scoreTreshold)
@@ -44,6 +40,6 @@ public class Decrease_volume : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
     }
+    #endregion
 }

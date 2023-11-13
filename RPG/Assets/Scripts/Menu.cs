@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 public class Menu : State
 {
+    #region Definitions
     public Menu(Engine engine_source) : base(engine_source)
     {
     }
@@ -12,7 +12,7 @@ public class Menu : State
     }
     public override IEnumerator Run()
     {
-
         yield break;
     }
+    #endregion
 }

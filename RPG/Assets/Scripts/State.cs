@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public abstract class State
 {
+    #region Variables
     protected Engine engine;
-    // Start is called before the first frame update
+    #endregion
+
+    #region Definitions
     public State(Engine engine_source)
     {
         engine = engine_source;
@@ -18,6 +19,5 @@ public abstract class State
     {
         yield break;
     }
-
-
+    #endregion
 }

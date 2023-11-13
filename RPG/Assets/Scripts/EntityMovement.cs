@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityMovement : MonoBehaviour
 {
+    #region Variables
     public float movementSpeed;
     public float xPositionLeft;
     public float xPositionRight;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    #endregion
 
-    // Update is called once per frame
+    #region Functions
     void Update()
     {
         Vector2 actualPosition = gameObject.transform.position;
@@ -22,4 +18,5 @@ public class EntityMovement : MonoBehaviour
             gameObject.transform.position = new Vector2(xPositionRight, actualPosition.y);
         }
     }
+    #endregion
 }

@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
+    #region Variables
     public AudioSource audioButtonHoverPrefab;
     public AudioSource audioButtonClickPrefab;
     public GameObject settingsMenu;
     private GameObject pauseMenu;
-    // Start is called before the first frame update
+    #endregion
 
+    #region Definitions
     public void LoadGameScene()
     {
         StartCoroutine("GameLoading");
@@ -44,7 +46,6 @@ public class SceneManager : MonoBehaviour
     }
     public void OnButtonHover()
     {
-        
         AudioSource tAudio = Instantiate<AudioSource>(audioButtonHoverPrefab, GameObject.Find("AudioSources").transform);
         tAudio.Play();
         Destroy(tAudio.gameObject, 1);
@@ -70,5 +71,5 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         Application.Quit();
     }
-
+    #endregion
 }

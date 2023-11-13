@@ -1,14 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class PlayGame : State
 {
+    #region Definitions
     public PlayGame(Engine engine_source) : base(engine_source)
     {
     }
 
-    // Start is called before the first frame update
     public override IEnumerator Start()
     {
         return base.Start();
@@ -21,5 +19,5 @@ public class PlayGame : State
         }
         yield break;
     }
-
+    #endregion
 }
